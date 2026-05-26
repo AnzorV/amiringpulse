@@ -1,4 +1,3 @@
-
 type OHLCData = [number, number, number, number, number];
 
 interface NextPageProps {
@@ -31,7 +30,7 @@ interface Ticker {
     base: string;
     target: string;
     converted_last: {
-        usd: number;
+        gbp: number;
     };
     timestamp: string;
     trade_url: string;
@@ -78,7 +77,7 @@ interface TrendingCoin {
         data: {
             price: number;
             price_change_percentage_24h: {
-                usd: number;
+                gbp: number;
             };
         };
     };
@@ -97,14 +96,13 @@ interface SearchCoin {
     };
 }
 
-// Chart Section Props (used in ChartSection.tsx)
 interface ChartSectionProps {
     coinData: {
         image: { large: string };
         name: string;
         symbol: string;
         market_data: {
-            current_price: { usd: number };
+            current_price: { gbp: number };
         };
     };
     coinOHLCData: OHLCData[];
@@ -125,14 +123,14 @@ interface TopGainersLosersResponse {
     name: string;
     symbol: string;
     image: string;
-    usd: number;
-    usd_24h_change: number;
-    usd_24h_vol: number;
+    gbp: number;
+    gbp_24h_change: number;
+    gbp_24h_vol: number;
     market_cap_rank: number;
 }
 
 interface PriceData {
-    usd: number;
+    gbp: number;
 }
 
 interface Trade {
@@ -144,7 +142,7 @@ interface Trade {
 }
 
 interface ExtendedPriceData {
-    usd: number;
+    gbp: number;
     coin?: string;
     price?: number;
     change24h?: number;
@@ -192,23 +190,23 @@ interface CoinDetailsData {
     };
     market_data: {
         current_price: {
-            usd: number;
+            gbp: number;
             [key: string]: number;
         };
         price_change_24h_in_currency: {
-            usd: number;
+            gbp: number;
         };
         price_change_percentage_24h_in_currency: {
-            usd: number;
+            gbp: number;
         };
         price_change_percentage_30d_in_currency: {
-            usd: number;
+            gbp: number;
         };
         market_cap: {
-            usd: number;
+            gbp: number;
         };
         total_volume: {
-            usd: number;
+            gbp: number;
         };
     };
     market_cap_rank: number;
